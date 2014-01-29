@@ -28,7 +28,7 @@ memoized('docs/readme', console.log)
 It stores the values returned in an object by default. You can pass read & write methods to choose your own:
 
 ```js
-memoized = memoize(fn, { read: read, write: write })
+memoized = memoize(fn, { read: read, write: write, hash: ifexists })
 
 function read (key, callback) {
 }
