@@ -8,7 +8,7 @@ function memoize(fn, options){
     write: options && options.write || write
   };
 
-  !hash && (hash = function(n){ return n; });
+  !hash && (hash = defaultHashFn);
 
   return call;
 
@@ -73,6 +73,12 @@ function memoize(fn, options){
     }
   };
 };
+
+function defaultHashFn (n) {
+  if (typeof n != 'function') return n;
+  return 'nil';
+}
+
 
 function run (callbacks, params){
   var i = callbacks.length;

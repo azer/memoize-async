@@ -29,6 +29,21 @@ it('memoizes functions with callbacks', function(done){
   }
 });
 
+it('may work with a function that takes no parameter', function(done){
+  var memoized = memoize(now);
+  var ref = Date.now();
+
+  memoized(function (error, ts) {
+    expect(ts).to.not.below(ref);
+    done();
+  });
+
+  function now (callback) {
+    callback(undefined, Date.now());
+  }
+});
+
+
 it('takes a hasher function optionally', function(){
   var cached, memoized;
 
