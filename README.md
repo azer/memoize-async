@@ -1,4 +1,4 @@
-## memoize-async [![Build Status](https://travis-ci.org/azer/memoize-async.png?branch=master)](https://travis-ci.org/azer/memoize-async)
+## memoize-async [![Build Status](https://travis-ci.org/azer/memoize-async.png)](https://travis-ci.org/azer/memoize-async)
 
 Async function memoizer.
 
@@ -23,3 +23,16 @@ memoized('docs/readme', console.log)
 // => read me first!
 ```
 
+### Storage
+
+It stores the values returned in an object by default. You can pass read & write methods to choose your own:
+
+```js
+memoized = memoize(fn, { read: read, write: write })
+
+function read (key, callback) {
+}
+
+function write (key, value, callback) {
+}
+```

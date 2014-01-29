@@ -1,13 +1,13 @@
 {
   "name": "memoize-async",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Async Function Memoizer",
   "main": "index.js",
   "scripts": {
-    "test": "fox"
+    "test": "prova"
   },
   "devDependencies": {
-    "fox": "*"
+    "prova": "*"
   },
   "repository": {
     "url": "git@github.com:azer/memoize-async.git",
